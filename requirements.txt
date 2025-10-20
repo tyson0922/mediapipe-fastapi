@@ -8,4 +8,3 @@ protobuf==4.25.3
 
 # Add multipart form parser required by FastAPI for form/file inputs
 python-multipart
-
