@@ -1,0 +1,10 @@
+services:
+  mediapipe:
+    image: ghcr.io/tyson0922/mediapipe-fastapi:dev-py310
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    # IMPORTANT: no build:, no volumes:, no --reload
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --log-level info
+    pull_policy: always   # ensures compose pulls the latest tag when starting
